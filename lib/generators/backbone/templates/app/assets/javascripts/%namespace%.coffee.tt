@@ -1,0 +1,16 @@
+#= require_tree ./shared
+#= require_self
+#= require_tree ./<%= namespace %>
+window.<%= namespace.classify %> ||= {}
+_(<%= namespace.classify %>).extend
+  Collections: {}
+  Models: {}
+  Routers: {}
+  Views: {}
+  Templates: {}
+  Environment: {}
+
+
+
+$(document).ready ->
+  
