@@ -30,8 +30,18 @@ module Backbone
       end
     end
     
-    def namespace
-      @namespace ||= raw_namespace.underscore
+    def namespace(classify=false)
+      style = classify ?  :classify : :underscore
+      raw_namespace.send(style)
+    end
+    
+    # [:model_name, :collection_name].each {|m| define_method m }
+    def model_name(classify=false)
+      
+    end
+    
+    def collection_name(classify=false)
+      
     end
   end
 end
