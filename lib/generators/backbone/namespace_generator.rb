@@ -31,7 +31,7 @@ module Backbone
     end
     
     def namespace(classify=false)
-      style = classify ?  :classify : :underscore
+      style = classify ?  :camelize : :underscore
       raw_namespace.send(style)
     end
     

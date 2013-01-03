@@ -17,17 +17,19 @@ module Backbone
     end
     
     def create_specs
-      
+      destination_dir = File.join( ['spec/javascripts', namespace].compact )
+      directory 'spec/javascripts/%namespace%', destination_dir
     end
     
+    # Helpers
     def collection_name(classify=false)
-      style = classify ?  :classify : :underscore
+      style = classify ?  :camelize : :underscore
       _collection_name, _namespace = raw_collection_name.split('::').reverse
       _collection_name.pluralize.send(style)
     end
     
     def namespace(classify=false)
-      style = classify ?  :classify : :underscore
+      style = classify ?  :camelize : :underscore
       _collection_name, _namespace = raw_collection_name.split('::').reverse
       _namespace.singularize.send(style)
     end

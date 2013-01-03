@@ -28,13 +28,13 @@ module Backbone
     # Helpers
     def namespace(classify=false)
       @model_name, @namespace = raw_model_name.split('::').reverse
-      style = classify ?  :classify : :underscore
+      style = classify ?  :camelize : :underscore
       @namespace.singularize.send(style)
     end
 
     def model_name(classify=false)
       @model_name, @namespace = raw_model_name.split('::').reverse
-      style = classify ?  :classify : :underscore
+      style = classify ?  :camelize : :underscore
       @model_name.singularize.send(style)
     end
     

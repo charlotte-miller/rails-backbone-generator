@@ -14,8 +14,6 @@ BackboneFactory.define '<%= model_name %>', <%= "#{namespace('classify')}.Models
 # =  FactoryGirl Interface:                             =
 # =  Factory.modleName( {overrides:here} )              =
 # =======================================================
-
-# Models
 window.Factory = (->
   factories = [{}].concat _(BackboneFactory.factories).keys()
   _(factories).inject (memo, factory)->
@@ -28,7 +26,6 @@ window.Factory = (->
 # ====================================================
 # =                   Collection                     =
 # ====================================================
-
 _(window.Factory).extend({        
   <%= collection_name %>:   (overrides)->   new <%= "#{namespace('classify')}.Collections.#{collection_name('classify')}" %>  _({
     models: _([1,2,3]).map -> BackboneFactory.create('<%= model_name %>', ->)
