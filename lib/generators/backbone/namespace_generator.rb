@@ -37,11 +37,9 @@ module Backbone
     
     # [:model_name, :collection_name].each {|m| define_method m }
     def model_name(classify=false)
-      
     end
     
     def collection_name(classify=false)
-      
     end
   end
 end

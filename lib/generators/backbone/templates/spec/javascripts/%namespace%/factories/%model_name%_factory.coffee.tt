@@ -1,17 +1,17 @@
 # ====================================================
 # =                      Model                       =
 # ====================================================
-BackboneFactory.define '<%= model_name %>', <%= "#{namespace}.Models.#{model_name('classify')}" %>, ->
-  # term_id: 1
-  # department_name: _(["ANTH", "BIOL", "CSCI", "MATH", "ENGR"]).shuffle()[0]
-  # course_name: _(["101", "102", "201", "202"]).shuffle()[0]
-  # section_name: _(['1', '2', 'A', 'B']).shuffle()[0]
+BackboneFactory.define '<%= model_name %>', <%= "#{namespace('classify')}.Models.#{model_name('classify')}" %>, ->
+  # title:       'Your Title Here'
+  # description: 'string, function, or another Factory'
+  # size:         _(['Tall', 'Grande', 'Venti', 'Trenta']).shuffle()[0]
+  # section:      Factory.section()
 
 
 
 
 # =======================================================
-# =  Improve Interface:                                 =
+# =  FactoryGirl Interface:                             =
 # =  Factory.modleName( {overrides:here} )              =
 # =======================================================
 
@@ -30,7 +30,7 @@ window.Factory = (->
 # ====================================================
 
 _(window.Factory).extend({        
-  <%= collection_name %>:   (overrides)->   new <%= "#{namespace}.Collections.#{collection_name('classify')}" %>  _({
+  <%= collection_name %>:   (overrides)->   new <%= "#{namespace('classify')}.Collections.#{collection_name('classify')}" %>  _({
     models: _([1,2,3]).map -> BackboneFactory.create('<%= model_name %>', ->)
     }).extend( overrides )
 
@@ -42,12 +42,5 @@ _(window.Factory).extend({
 # =               Complex Factories                 =
 # ====================================================
 
-# Complex
 # section_w_section_materials: (overrides)-> Factory.section( _( section_materials: Factory.section_materials().models ).extend(overrides) )
-# distributor_w_offers: (overrides)-> Factory.distributor( _(offers: Factory.offers().models ).extend(overrides))
-# book_w_offers: (overrides)-> Factory.book( _( offers: Factory.offers().models ).extend(overrides) )
-# book_w_section_materials: (overrides)-> Factory.book( _( section_materials: Factory.section_materials().models ).extend(overrides) )
-# book_w_section_materials_and_offers: (overrides)-> Factory.book( _(
-#   section_materials: Factory.section_materials().models
-#   offers: Factory.offers().models
-# ).extend(overrides) )
+# distributor_w_offers:        (overrides)-> Factory.distributor( _(offers: Factory.offers().models ).extend(overrides))
