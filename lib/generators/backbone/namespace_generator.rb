@@ -40,13 +40,8 @@ module Backbone
       │   ├── routes
       │   ├── templates
       │   └── views
-      ├── dashboard.coffee
-      ├── application.js
-      └── shared
-          ├── core_extentions
-          │   └── collections_extentions.coffee
-          ├── helpers
-          └── utils
+      └── dashboard.coffee
+
 
       spec/javascripts/dashboard/
       ├── collections

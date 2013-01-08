@@ -32,7 +32,8 @@ Or install it yourself as:
     $ gem install rails_backbone_generator
 
 ## Usage
-The gem has three generators:
+The gem has three main generators (and one for setup):
+Jump to: [Setup](#backbonesetup) | [Namespace](#backbonenamespace) | [Model](#backbonemodel) | [Collection](#backbonecollection)
 ```
 $ rails g # for generate
 
@@ -40,7 +41,10 @@ $ rails g # for generate
     backbone:collection
     backbone:model
     backbone:namespace
+    backbone:setup
 ```
+
+
 ##  backbone:namespace
 Creates a namespaced directory structure
 ```
@@ -52,13 +56,7 @@ $ rails g backbone:namespace dashboard
   │   ├── routes
   │   ├── templates
   │   └── views
-  ├── dashboard.coffee
-  ├── application.js
-  └── shared
-      ├── core_extentions
-      │   └── collections_extentions.coffee
-      ├── helpers
-      └── utils
+  └── dashboard.coffee
 
   spec/javascripts/dashboard/
   ├── collections
@@ -66,6 +64,7 @@ $ rails g backbone:namespace dashboard
   ├── models
   └── views
 ```
+
 
 ##  backbone:collection
 Creates a model and plural-collection 
@@ -92,9 +91,6 @@ $ rails g backbone:collection Dashboard::Widgets
 Creates a model w/out a collection
 ```
 $ rails g backbone:model Dashboard::Widget
-  create  app/assets/javascripts/dashboard/widget.coffee
-  create  spec/javascripts/dashboard/factories/widget_factory.coffee
-  create  spec/javascripts/dashboard/models/widget_spec.coffee
   
   app/assets/javascript/dashboard
   └── models
@@ -105,12 +101,32 @@ $ rails g backbone:model Dashboard::Widget
   │   └── widget_factory.coffee
   └── models
       └── widget_spec.coffee
-  
-  
+```
+
+
+##  backbone:setup
+Prepares the app for Backbone/Jasmine development.  
+```
+$ rails g backbone:setup
+      
+      app/assets/javascripts
+      ├── application.js
+      └── shared
+          ├── core_extentions
+          │   └── collections_extentions.coffee
+          ├── helpers
+          └── utils
+      
+      spec/javascripts
+      [ TODO ]
+      
+      vendor/javascripts
+      [ TODO ]
+      
 ```
 ## Factories
-Similar to ruby's FactoryGirl, BackboneFactory adds factories to Jasmine.js.  ``Factory.widget({ options:obj })  #=> Backbone.Model``
-The generator adds ``Factory.model_name({optional:override})`` and ``Factory.collection_name({optional:override})``
+Similar to ruby's FactoryGirl, BackboneFactory adds factories to Jasmine.js.  ``Factory.widget({ options:obj })  #=> Backbone.Model``  
+The generator adds ``Factory.model_name({optional:override})`` and ``Factory.collection_name({optional:override})``  
 ```
   # spec/javascripts/dashboard/factories/widget_factory.coffee
   
