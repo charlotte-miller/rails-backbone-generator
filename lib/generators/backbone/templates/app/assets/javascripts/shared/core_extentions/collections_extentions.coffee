@@ -1,11 +1,14 @@
 class Backbone.ExtendedCollection extends Backbone.Collection
   
-  # Collections accept an array of like any other attribute. (backwards compatable)
-  # new Sample({
-  #   models:[ model1, model2],
-  #   title: 'great for factories'
-  # })
-  
+  # Backwards compatable interface update
+  # Allows the Backbone.Collection#constructor to accept a single hash of attributes.
+  # The 'models' attribute is used as the collection's enumerable
+  #
+  #   new Sample({
+  #     models:[ model1, model2],
+  #     title: 'great for factories'
+  #   })
+  #
   constructor: (models=[], other_options={})->
     unless models instanceof Array
       _(other_options).extend( _(models).tap (obj)-> 

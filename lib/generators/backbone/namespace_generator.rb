@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'rails/generators'
 require 'find'
 
@@ -24,10 +25,36 @@ module Backbone
     # removes %un-namespaced% files
     def cleanup
       ['app/assets/javascripts', 'spec/javascripts'].each do |base|
-        Dir.glob("#{base}/**/*%*").each do |file|
+        Dir.glob("#{base}/**/__delte__*").each do |file|
           remove_file( file )
         end
       end
+    end
+    
+    def print_tree
+      tree = <<-TREE
+      
+      app/assets/javascripts/dashboard
+      │   ├── collections
+      │   ├── models
+      │   ├── routes
+      │   ├── templates
+      │   └── views
+      ├── dashboard.coffee
+      ├── application.js
+      └── shared
+          ├── core_extentions
+          │   └── collections_extentions.coffee
+          ├── helpers
+          └── utils
+
+      spec/javascripts/dashboard/
+      ├── collections
+      ├── factories
+      ├── models
+      └── views
+      TREE
+      say tree.gsub(/dashboard/, namespace).gsub(/widget/, model_name)
     end
     
     def namespace(classify=false)
@@ -35,11 +62,7 @@ module Backbone
       raw_namespace.send(style)
     end
     
-    # [:model_name, :collection_name].each {|m| define_method m }
-    def model_name(classify=false)
-    end
-    
-    def collection_name(classify=false)
-    end
+    def model_name(classify=false); '__delte__' ;end
+    def collection_name(classify=false); '__delte__' ;end
   end
 end

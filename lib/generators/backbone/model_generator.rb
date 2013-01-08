@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'rails/generators'
 
 module Backbone
@@ -13,23 +14,33 @@ module Backbone
     
     def create_specs
       destination_dir = File.join( ['spec/javascripts', namespace].compact )
-      directory 'spec/javascripts/%namespace%', destination_dir
+      spec_paths = ['factories/%model_name%_factory.coffee', 'models/%model_name%_spec.coffee']
+      spec_paths.each do |path|
+        template "spec/javascripts/%namespace%/#{path}.tt", "spec/javascripts/%namespace%/#{path}"
+      end
     end
     
-    # removes %un-namespaced% files
-    def cleanup
-      ['app/assets/javascripts', 'spec/javascripts'].each do |base|
-        Dir.glob("#{base}/**/*%*").each do |file|
-          remove_file( file )
-        end
-      end
+    def print_tree
+      tree =  <<-TREE
+        
+        app/assets/javascript/dashboard
+        └── models
+            └── widget.coffee
+
+        spec/javascripts/dashboard
+        ├── factories
+        │   └── widget_factory.coffee
+        └── models
+            └── widget_spec.coffee
+      TREE
+      say tree.gsub(/\/dashboard/, namespace.to_s).gsub(/widget/, model_name)
     end
     
     # Helpers
     def namespace(classify=false)
       @model_name, @namespace = raw_model_name.split('::').reverse
       style = classify ?  :camelize : :underscore
-      @namespace.singularize.send(style)
+      @namespace && @namespace.singularize.send(style)
     end
 
     def model_name(classify=false)
