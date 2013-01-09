@@ -139,6 +139,31 @@ The generator adds ``Factory.model_name({optional:override})`` and ``Factory.col
         hint:  'attributes can be other factories'
 ```
 
+## Resources
+**[CoffeeScript](http://coffeescript.org/)**
+* [JS to Coffee](http://js2coffee.org/) converter
+
+**[Backbone.js](http://backbonejs.org/)** and it's foundation **[Underscore.js](http://underscorejs.org/)**
+* [Backbone Relational](https://github.com/PaulUithol/Backbone-relational/#backbone-relational): Associations for Backbone Models <tt>Bundle.get('books')</tt>
+* [Backbone Query](https://github.com/davidgtonge/backbone_query#usage): A query DSL inspired by MongoDB. Includes matchers, logical operators, sorting, and paging.
+* [Backbone BindTo](https://github.com/RStankov/backbone-bind-to#backbonebindto): Cleans-up the pattern of adding and *removing* event listeners to <tt>Backbone.Views</tt>
+* [Backbone Handlebars](https://github.com/RStankov/backbone-handlebars/blob/master/README.md#backbonehandlebars): Extension for better integration with [Handlebars.js](http://handlebarsjs.com/) including nested views  
+
+**[Handlebars JS Templates](http://handlebarsjs.com/)**
+* [Handlebars TextMate Bundle](https://github.com/drnic/Handlebars.tmbundle)
+
+
+**[Jasmine.js](http://pivotal.github.com/jasmine/)** | [Cheat Sheat](https://github.com/mattfysh/cheat-sinon-jasmine)
+* [Backbone Factory](https://github.com/SupportBee/Backbone-Factory#backbone-factory)
+* [Jasmine Jquery](https://github.com/velesin/jasmine-jquery/)
+* [Sinon](http://sinonjs.org/): Spies, stubs, mock ajax, and time/animation
+* [Sinon-Jasmine](https://github.com/froots/jasmine-sinon#sinonjs-matchers): Test expectations for mocks and stubs
+
+
+* **Best Practices**: [Backbone Patterns](http://ricostacruz.com/backbone-patterns/)
+* **Testing Backbone**: [Part 1: Introduction](http://tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html) | [Part 2: Models & Collections](http://tinnedfruit.com/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) | [Part 3: Routers & Views](http://tinnedfruit.com/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html)
+* **Hackers Guide to Backbone**: [Part 1: Models & Events](http://dailyjs.com/2012/07/19/mvstar-2/) | [Part 2: Collections](http://dailyjs.com/2012/07/26/mvstar-3/) | [Part 3: Router and History](http://dailyjs.com/2012/08/02/mvstar-4/) | [Part 4: Sync](http://dailyjs.com/2012/08/09/mvstar-5/)
+
 
 
 ## Contributing
