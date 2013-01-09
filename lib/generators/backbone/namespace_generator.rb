@@ -8,29 +8,39 @@ module Backbone
     desc "Setup a Backbone namespace"
     argument :raw_namespace, :type => :string, :required => true
     
-    def ensure_namespaced_app_dir # :nodoc:
-      directory 'app/assets/javascripts'
+    def setup_dir_structure
+      Dir.glob(File.join(source_paths, "**/.gitkeep")) do |keep_path|  
+        template keep_path, keep_path.gsub(/^.*backbone\/templates\//, "")
+      end
       
+      # build and require a namespace initializer
+      template "app/assets/javascripts/%namespace%.coffee.tt", "app/assets/javascripts/%namespace%.coffee"
+      path = File.join(destination_root, 'app/assets/javascripts/application.js')
+      content =(
+        if behavior == :revoke  # destroy
+          File.read(path).sub(/\/\/= require \.\/#{namespace}\n/, '')
+        else
+          File.read(path).sub(/(^\/\/[\S| ]*\n)([^\/])/) do |match|
+            "#{match.strip}\n//= require ./#{namespace}\n\n"
+          end
+        end  )
+      File.open(path, 'wb') { |file| file.write(content) }
+      say_status :gsub, 'app/assets/javascripts/application.js'
+    end
+    
+    def ensure_namespaced_app_dir # :nodoc:
+      # directory 'app/assets/javascripts'
       # add to application.js
-      append_to_file 'app/assets/javascripts/application.js', "\n\n"
-      gsub_file 'app/assets/javascripts/application.js', /\/\/.*\n\s/ do |match|
-        match.sub /\n\s/, "\n//= require ./#{namespace}\n\n"
-      end
+            
     end
     
-    def ensure_namespaced_spec_dir # :nodoc:
-      directory 'spec/javascripts'
-    end
-    
-    # removes %un-namespaced% files
-    def cleanup
-      ['app/assets/javascripts', 'spec/javascripts'].each do |base|
-        Dir.glob("#{base}/**/__delte__*").each do |file|
-          remove_file( file )
-        end
-      end
-    end
-    
+    # def ensure_namespaced_spec_dir # :nodoc:
+    #   Dir.glob(File.join(source_paths, "app/assets/javascripts/**/.gitkeep")) do |keep_path|  
+    #     template keep_path, keep_path.gsub(/^.*backbone\/templates\//, "")
+    #   end
+    #   directory 'spec/javascripts'
+    # end
+        
     def print_tree
       tree = <<-TREE
       
