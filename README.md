@@ -105,7 +105,11 @@ $ rails g backbone:model Dashboard::Widget
 
 
 ##  backbone:setup
-Prepares the app for Backbone/Jasmine development.  
+__[ Optional ]__: Prepares the app for Backbone/Jasmine development.
+ * Vendors and requires core frameworks
+ * Adds common plugins and Jasmine helpers 
+ * Configures Jasmine and adds a Guard file.   Run ``bundle exec guard`` to run tests.
+ 
 ```
 $ rails g backbone:setup
       
