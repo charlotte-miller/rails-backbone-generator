@@ -28,18 +28,7 @@ module Backbone
       say_status :gsub, 'app/assets/javascripts/application.js'
     end
     
-    def ensure_namespaced_app_dir # :nodoc:
-      # directory 'app/assets/javascripts'
-      # add to application.js
-            
-    end
     
-    # def ensure_namespaced_spec_dir # :nodoc:
-    #   Dir.glob(File.join(source_paths, "app/assets/javascripts/**/.gitkeep")) do |keep_path|  
-    #     template keep_path, keep_path.gsub(/^.*backbone\/templates\//, "")
-    #   end
-    #   directory 'spec/javascripts'
-    # end
         
     def print_tree
       tree = <<-TREE
