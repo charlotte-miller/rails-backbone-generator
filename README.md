@@ -33,8 +33,8 @@ Or install it yourself as:
     $ gem install rails_backbone_generator
 
 ## Usage
-The gem has three main generators (and one for setup):
-Jump to: [Setup](#backbonesetup) | [Namespace](#backbonenamespace) | [Model](#backbonemodel) | [Collection](#backbonecollection)
+The gem has three main generators (and one for setup):  
+[Setup](#backbonesetup) | [Namespace](#backbonenamespace) | [Model](#backbonemodel) | [Collection](#backbonecollection)
 ```
 $ rails g # for generate
 
