@@ -122,11 +122,39 @@ $ rails g backbone:setup
           ├── helpers
           └── utils
       
-      spec/javascripts
-      [ TODO ]
-      
-      vendor/javascripts
-      [ TODO ]
+      spec/javascripts/
+      ├── fixtures
+      ├── helpers
+      │   ├── association_helpers.coffee
+      │   ├── common_helpers.coffee
+      │   ├── fake_host.coffee
+      │   └── headless_webkit_helper.coffee
+      └── support
+          └── jasmine.yml
+
+      vendor/javascripts/
+      ├── backbone
+      │   ├── backbone-0.9.2.js
+      │   ├── backbone-bind-to-1.0.0.coffee
+      │   ├── backbone-handlebars-1.0.0.coffee
+      │   ├── backbone-query-0.1.2.js
+      │   ├── backbone-relational-0.6.0.js
+      │   ├── handlebars-1.0.rc.1.js
+      │   └── underscore-1.3.3.js
+      ├── browser_compatibility
+      │   ├── json2.js
+      │   └── localstorage-polyfill.js
+      ├── jquery
+      │   ├── jquery-1.8.0.js
+      │   ├── jquery-ui.min.js
+      │   ├── jquery.easing-1.3.js
+      │   └── jquery_ujs.js
+      └── testing
+          ├── backbone-factory.js
+          ├── jasmine-jquery-1.3.1.js
+          ├── jasmine-sinon.js
+          ├── mock-ajax.js
+          └── sinon-1.4.2.js
       
 ```
 ## Factories
