@@ -199,6 +199,6 @@ The generator adds ``Factory.model_name({optional:override})`` and ``Factory.col
 5. Create new Pull Request
 
 <hr/>
-[![BookRenter.com Logo](http://www.rafter.com/common/images/header_logo.png "BookRenter.com")](http://http://www.rafter.com/)
-RailsBackboneGenerator is maintained by [Chip Miller](/chip-miller) and and funded by [Rafter](http://http://www.rafter.com/)
+[![BookRenter.com Logo](http://www.rafter.com/common/images/header_logo.png "BookRenter.com")](http://www.rafter.com/)
+RailsBackboneGenerator is maintained by [Chip Miller](/chip-miller) and and funded by [Rafter](http://www.rafter.com/)
 
