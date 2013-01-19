@@ -1,6 +1,8 @@
-# RailsBackboneGenerator
-[![Gem Version](https://badge.fury.io/rb/rails-backbone-generator.png)](http://badge.fury.io/rb/rails-backbone-generator)  
-Inspired by ``rails generate`` - Generates [Backbone.js](/documentcloud/backbone) models and collections with [BackboneFactory](/SupportBee/Backbone-Factory) and [Jasmine](/pivotal/jasmine) tests.
+# RailsBackboneGenerator [![Gem Version](https://badge.fury.io/rb/rails-backbone-generator.png)](http://badge.fury.io/rb/rails-backbone-generator)  
+Inspired by ``rails generate`` - Generates [Backbone.js](/documentcloud/backbone) models and collections with [BackboneFactory](/SupportBee/Backbone-Factory) and [Jasmine](/pivotal/jasmine) tests.  
+The gem adds Backbone: [Setup](#backbonesetup) | [Namespace](#backbonenamespace) | [Model](#backbonemodel) | [Collection](#backbonecollection)
+
+
 ```  
     $ rails generate backbone:collection Dashboard::Widget 
     
@@ -19,7 +21,6 @@ Inspired by ``rails generate`` - Generates [Backbone.js](/documentcloud/backbone
         └── widget_spec.coffee
 ```
 ## Installation
-
 Add this line to your application's Gemfile:
 
     gem 'rails_backbone_generator'
@@ -32,9 +33,12 @@ Or install it yourself as:
 
     $ gem install rails_backbone_generator
 
+
+
+
 ## Usage
 The gem has three main generators (and one for setup):  
-[Setup](#backbonesetup) | [Namespace](#backbonenamespace) | [Model](#backbonemodel) | [Collection](#backbonecollection)
+[backbone:setup](#backbonesetup) | [backbone:namespace](#backbonenamespace) | [backbone:model](#backbonemodel) | [backbone:collection](#backbonecollection)
 ```
 $ rails g # for generate
 
@@ -111,6 +115,11 @@ __[ Optional ]__: Prepares the app for Backbone/Jasmine development.
  * Adds common plugins and Jasmine helpers 
  * Configures Jasmine and adds a Guard file.   Run ``bundle exec guard`` to run tests.
  
+__Runtime Dependency__  
+  ``brew install qt --build-from-source`` [\[ Details \]](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
+  * required to run Jasmine specs with guard-jasmine-headless-webkit
+  * other generators do not require this option
+
 ```
 $ rails g backbone:setup
       
@@ -199,6 +208,6 @@ The generator adds ``Factory.model_name({optional:override})`` and ``Factory.col
 5. Create new Pull Request
 
 <hr/>
-[![BookRenter.com Logo](http://www.rafter.com/common/images/header_logo.png "BookRenter.com")](http://www.rafter.com/)
-RailsBackboneGenerator is maintained by [Chip Miller](/chip-miller) and and funded by [Rafter](http://www.rafter.com/)
+[![BookRenter.com Logo](http://www.rafter.com/common/images/header_logo.png "BookRenter.com")](http://http://www.rafter.com/)
+RailsBackboneGenerator is maintained by [Chip Miller](/chip-miller) and and funded by [Rafter](http://http://www.rafter.com/)
 
