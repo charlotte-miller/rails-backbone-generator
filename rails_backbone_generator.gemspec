@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["charlespmiller@gmail.com"]
   gem.description   = %q{Generates Backbone.js models and collections with BackboneFactory and Jasmine tests.}
   gem.summary       = %q{Inspired by rails generate - Generates Backbone.js models and collections with BackboneFactory and Jasmine tests. }
-  gem.homepage      = "https://github.com/chip-miller/rails-backbone-generator"
+  gem.homepage      = "https://github.com/chip-miller/rails-backbone-generator#railsbackbonegenerator"
 
   gem.files         = `git ls-files`.split($\)
   # gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }

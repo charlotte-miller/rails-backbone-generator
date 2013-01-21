@@ -10,8 +10,35 @@ module Backbone
       directory '.'
     end
     
+    def add_development_gems    
+      testing_gems = <<-TESTING_GEMS
+group :development, :test do
+
+  # Jasmine
+  gem 'jasmine-rails'
+  gem 'jasmine-headless-webkit', '~> 0.8.4'
+
+  # Guard
+  gem 'growl'
+  gem 'rb-fsevent'
+  gem 'guard-rspec'
+  gem 'guard-jasmine-headless-webkit'  # brew install qt --build-from-source
+end
+
+group :test do
+  gem 'therubyracer', :platform => :ruby
+end
+TESTING_GEMS
+      
+      append_to_file 'Gemfile', testing_gems
+      say testing_gems
+      run 'bundle'# in_root { `bundle` }
+    end
+    
     def print_tree
       tree = <<-TREE
+      Gemfile (updated)
+      Guardfile
       
       app/assets/javascripts
       ├── application.js
@@ -57,5 +84,7 @@ module Backbone
       TREE
       say tree
     end
+    
+    
   end
 end

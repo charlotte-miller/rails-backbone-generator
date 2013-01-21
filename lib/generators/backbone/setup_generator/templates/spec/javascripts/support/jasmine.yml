@@ -42,7 +42,7 @@ stylesheets:
 helpers:
   - "helpers/**/*.{js,coffee}"
   - "fixtures/**/*.{js,coffee}"
-  - "factories.{js,coffee}"
+  - "**/factories/*_factory.{js,coffee}"
 
 # spec_files
 #

@@ -8,7 +8,7 @@ module Backbone
     argument :raw_model_name, required: true, type: 'string'
       
     def create_model
-      destination_dir = File.join( ['app/assets/javascripts', namespace, "#{model_name}.coffee"].compact )
+      destination_dir = File.join( ['app/assets/javascripts', namespace, "models/#{model_name}.coffee"].compact )
       template 'app/assets/javascripts/%namespace%/models/%model_name%.coffee.tt', destination_dir
     end
     
