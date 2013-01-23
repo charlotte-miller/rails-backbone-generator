@@ -23,7 +23,7 @@ The gem adds Backbone: [Setup](#backbonesetup) | [Namespace](#backbonenamespace)
 ## Installation
 Add this line to your application's Gemfile:
 
-    gem 'rails_backbone_generator'
+    gem 'rails-backbone-generator'
 
 And then execute:
 
@@ -31,7 +31,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install rails_backbone_generator
+    $ gem install rails-backbone-generator
 
 
 
