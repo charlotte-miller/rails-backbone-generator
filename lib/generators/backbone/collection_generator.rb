@@ -2,7 +2,7 @@
 require 'rails/generators'
 
 module Backbone
-  class CollectionGenerator < Rails::Generators::Base
+  class CollectionGenerator < ::Rails::Generators::Base
     source_root File.expand_path('../templates', __FILE__)
     desc "Creates a BackboneModel, BackboneCollection, & Jasmine tests/factory\nrails g backbone:collection Navigation::Buttons"
     argument :raw_collection_name, required: true, type: 'string'
