@@ -3,7 +3,7 @@ require 'rails/generators'
 require 'find'
 
 module Backbone
-  class NamespaceGenerator < Rails::Generators::Base
+  class NamespaceGenerator < ::Rails::Generators::Base
     source_root File.expand_path('../templates', __FILE__)
     desc "Setup a Backbone namespace"
     argument :raw_namespace, :type => :string, :required => true

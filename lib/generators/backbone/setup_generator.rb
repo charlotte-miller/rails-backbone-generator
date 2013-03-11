@@ -2,7 +2,7 @@
 require 'rails/generators'
 
 module Backbone
-  class SetupGenerator < Rails::Generators::Base
+  class SetupGenerator < ::Rails::Generators::Base
     source_root File.expand_path('../setup_generator/templates', __FILE__)
     desc "Setup a Backbone Application"
     
