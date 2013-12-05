@@ -16,16 +16,13 @@ module BackboneGenerator
       # build and require a namespace initializer
       template "app/assets/javascripts/%namespace%.coffee.tt", "app/assets/javascripts/%namespace%.coffee"
       path = File.join(destination_root, 'app/assets/javascripts/application.js')
-      content =(
-        if behavior == :revoke  # destroy
-          File.read(path).sub(/\/\/= require \.\/#{namespace}\n/, '')
-        else
-          File.read(path).sub(/(^\/\/[\S| ]*\n)([^\/])/) do |match|
-            "#{match.strip}\n//= require ./#{namespace}\n\n"
-          end
-        end  )
-      File.open(path, 'wb') { |file| file.write(content) }
-      say_status :gsub, 'app/assets/javascripts/application.js'
+      if behavior == :revoke  # destroy
+        gsub_file path, /\/\/= require \.\/#{namespace}\n/, ''
+      else
+        gsub_file 'app/assets/javascripts/application.js', /\/\/.*\n\s/ do |match|
+          match.sub /\n\s/, "\n//= require ./#{namespace}\n\n"
+        end
+      end
     end
 
 
