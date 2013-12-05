@@ -1,3 +1,3 @@
-module Backbone
+module BackboneGenerator
   require 'rails/generators'
 end

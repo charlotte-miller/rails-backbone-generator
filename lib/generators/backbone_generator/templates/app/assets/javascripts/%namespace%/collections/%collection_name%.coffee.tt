@@ -1,0 +1,4 @@
+#= require ../models/<%= model_name %>
+
+class <%= [namespace('classify'), "Collections", collection_name('classify')].compact.join('.') %> extends <%= collection_base_class %>
+  model: <%= [namespace('classify'), "Models", model_name('classify')].compact.join('.') %>

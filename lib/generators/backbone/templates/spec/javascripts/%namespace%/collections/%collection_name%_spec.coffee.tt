@@ -1,8 +1,0 @@
-describe "<%= [namespace('classify'), 'Collections'].compact.join('.') %>", ->
-  
-  describe "<%= collection_name('classify') %>", ->
-    @<%= collection_name %> = Factory.<%= collection_name %>()
-
-    it "should build from factory", =>
-      expect(@<%= collection_name %>).toBeA(<%= [namespace('classify'), "Collections", collection_name('classify')].compact.join('.') %>)
-      expect(@<%= collection_name %>.at(0)).toBeA(<%= [namespace('classify'), "Models", model_name('classify')].compact.join('.') %>)

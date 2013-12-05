@@ -1,0 +1,15 @@
+class <%= [namespace('classify'), "Models", model_name('classify')].compact.join('.') %> extends Backbone.RelationalModel
+
+  # relations:[
+  #   {
+  #     type:            'HasMany'
+  #     key:             'examples'
+  #     relatedModel:    '<%= [namespace('classify'), "Models", "Example"].compact.join('.') %>'
+  #     collectionType:  '<%= [namespace('classify'), "Collections", "Examples"].compact.join('.') %>'
+  #     reverseRelation:
+  #       key: 'example_id'
+  #       type: 'HasOne'
+  #   }
+  # ]
+  #
+  # defaults: {}
