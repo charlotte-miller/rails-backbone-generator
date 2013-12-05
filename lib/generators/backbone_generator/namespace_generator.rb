@@ -10,16 +10,18 @@ module BackboneGenerator
 
     def setup_dir_structure
       Dir.glob(File.join(source_paths, "**/.gitkeep")) do |keep_path|
-        template keep_path, keep_path.gsub(/^.*backbone\/templates\//, "")
+        template keep_path, keep_path.gsub(/^.*backbone_generator\/templates\//, "")
       end
 
       # build and require a namespace initializer
       template "app/assets/javascripts/%namespace%.coffee.tt", "app/assets/javascripts/%namespace%.coffee"
       path = File.join(destination_root, 'app/assets/javascripts/application.js')
+
       if behavior == :revoke  # destroy
         gsub_file path, /\/\/= require \.\/#{namespace}\n/, ''
       else
-        gsub_file 'app/assets/javascripts/application.js', /\/\/.*\n\s/ do |match|
+        regex_for_end_of_manifest_comments = /\/\/.*\n(\s|$)/
+        gsub_file path, regex_for_end_of_manifest_comments do |match|
           match.sub /\n\s/, "\n//= require ./#{namespace}\n\n"
         end
       end
