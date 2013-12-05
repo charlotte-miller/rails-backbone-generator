@@ -1,5 +1,5 @@
 #= require_tree ../fixtures
-#= require ../../../vendor/assets/javascripts/testing/sinon-1.4.2
+#= require ../../../vendor/assets/javascripts/testing/sinon-1.7.3
 
 # FakeHost.respond() to complete request
 beforeEach ->

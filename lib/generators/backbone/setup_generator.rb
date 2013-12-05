@@ -60,27 +60,27 @@ TESTING_GEMS
       
       vendor/javascripts/
       ├── backbone
-      │   ├── backbone-0.9.2.js
-      │   ├── backbone-bind-to-1.0.0.coffee
+      │   ├── backbone-1.1.0.js
+      │   ├── backbone-bind-to-1.1.0.coffee
       │   ├── backbone-handlebars-1.0.0.coffee
-      │   ├── backbone-query-0.1.2.js
-      │   ├── backbone-relational-0.6.0.js
-      │   ├── handlebars-1.0.rc.1.js
-      │   └── underscore-1.3.3.js
+      │   ├── backbone-query-0.2.3.coffee
+      │   ├── backbone-relational-0.8.6.js
+      │   ├── handlebars-1.1.2.js
+      │   └── underscore-1.5.2.js
       ├── browser_compatibility
       │   ├── json2.js
       │   └── localstorage-polyfill.js
       ├── jquery
-      │   ├── jquery-1.8.0.js
-      │   ├── jquery-ui.min.js
+      │   ├── jquery-1.10.2.js
+      │   ├── jquery-ui-1.10.3.js
       │   ├── jquery.easing-1.3.js
       │   └── jquery_ujs.js
       └── testing
           ├── backbone-factory.js
-          ├── jasmine-jquery-1.3.1.js
-          ├── jasmine-sinon.js
-          ├── mock-ajax.js
-          └── sinon-1.4.2.js
+          ├── jasmine-jquery-1.5.93.js
+          ├── jasmine-sinon-0.2.1.js
+          ├── mock-ajax-2.0.0.js
+          └── sinon-1.7.3.js
       TREE
       say tree
     end
