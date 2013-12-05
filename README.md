@@ -4,7 +4,7 @@ The gem adds Backbone: [Setup](#backbonesetup) | [Namespace](#backbonenamespace)
 
 
 ```  
-    $ rails generate backbone:collection Dashboard::Widget 
+    $ rails generate backbone_generator:collection Dashboard::Widget 
     
     app/assets/javascripts/dashboard
     ├── collections
@@ -42,18 +42,18 @@ The gem has three main generators (and one for setup):
 ```
 $ rails g # for generate
 
-  Backbone:
-    backbone:collection
-    backbone:model
-    backbone:namespace
-    backbone:setup
+  BackboneGenerator:
+    backbone_generator:collection
+    backbone_generator:model
+    backbone_generator:namespace
+    backbone_generator:setup
 ```
 
 
 ##  backbone:namespace
 Creates a namespaced directory structure
 ```
-$ rails g backbone:namespace dashboard
+$ rails g backbone_generator:namespace dashboard
   
   app/assets/javascripts/dashboard
   │   ├── collections
@@ -74,7 +74,7 @@ $ rails g backbone:namespace dashboard
 ##  backbone:collection
 Creates a model and plural-collection 
 ```
-$ rails g backbone:collection Dashboard::Widgets
+$ rails g backbone_generator:collection Dashboard::Widgets
 
   app/assets/javascripts/dashboard
   ├── collections
@@ -95,7 +95,7 @@ $ rails g backbone:collection Dashboard::Widgets
 ##  backbone:model
 Creates a model w/out a collection
 ```
-$ rails g backbone:model Dashboard::Widget
+$ rails g backbone_generator:model Dashboard::Widget
   
   app/assets/javascript/dashboard
   └── models
@@ -121,7 +121,7 @@ __Runtime Dependency__
   * other generators do not require this option
 
 ```
-$ rails g backbone:setup
+$ rails g backbone_generator:setup
       
       app/assets/javascripts
       ├── application.js
