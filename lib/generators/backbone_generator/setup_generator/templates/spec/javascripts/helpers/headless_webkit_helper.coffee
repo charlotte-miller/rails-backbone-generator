@@ -1,4 +1,4 @@
-is_headless = ->
+window.is_headless = ->
   /jasmine-headless-webkit/.test(navigator.userAgent)
 
 
