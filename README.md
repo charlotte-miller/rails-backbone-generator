@@ -179,7 +179,7 @@ The generator adds ``Factory.model_name({optional:override})`` and ``Factory.col
 
 ## External Docs
 **[Backbone.js](http://backbonejs.org/)** and it's foundation **[Underscore.js](http://underscorejs.org/)**
-* [Backbone Relational](https://github.com/PaulUithol/Backbone-relational/#backbone-relational): Associations for Backbone Models <tt>Bundle.get('books')</tt>
+* [Backbone Relational](http://backbonerelational.org/): Associations for Backbone Models <tt>Bundle.get('books')</tt>
 * [Backbone Query](https://github.com/davidgtonge/backbone_query#usage): A query DSL inspired by MongoDB. Includes matchers, logical operators, sorting, and paging.
 * [Backbone BindTo](https://github.com/RStankov/backbone-bind-to#backbonebindto): Cleans-up the pattern of adding and *removing* event listeners to <tt>Backbone.Views</tt>
 * [Backbone Handlebars](https://github.com/RStankov/backbone-handlebars/blob/master/README.md#backbonehandlebars): Extension for better integration with [Handlebars.js](http://handlebarsjs.com/) including nested views  
