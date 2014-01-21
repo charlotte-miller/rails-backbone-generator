@@ -41,13 +41,13 @@ module BackboneGenerator
       └── dashboard.coffee
 
 
-      spec/javascripts/dashboard/
+      spec/javascripts/dashboard
       ├── collections
       ├── factories
       ├── models
       └── views
       TREE
-      say tree.gsub(/dashboard/, namespace).gsub(/widget/, model_name)
+      say tree.gsub(/dashboard/, namespace)
     end
 
     def namespace(classify=false)

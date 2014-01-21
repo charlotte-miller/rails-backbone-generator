@@ -23,7 +23,7 @@ module BackboneGenerator
     def print_tree
       tree =  <<-TREE
 
-        app/assets/javascript/dashboard
+        app/assets/javascripts/dashboard
         └── models
             └── widget.coffee
 
@@ -33,7 +33,7 @@ module BackboneGenerator
         └── models
             └── widget_spec.coffee
       TREE
-      say tree.gsub(/\/dashboard/, namespace.to_s).gsub(/widget/, model_name)
+      say tree.gsub(/\/dashboard/, (namespace && "/#{namespace}").to_s).gsub(/widget/, model_name)
     end
 
     # Helpers

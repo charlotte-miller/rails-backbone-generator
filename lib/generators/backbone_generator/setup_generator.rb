@@ -49,7 +49,7 @@ TESTING_GEMS
           ├── helpers
           └── utils
 
-      spec/javascripts/
+      spec/javascripts
       ├── fixtures
       ├── helpers
       │   ├── association_helpers.coffee
@@ -59,7 +59,7 @@ TESTING_GEMS
       └── support
           └── jasmine.yml
 
-      vendor/javascripts/
+      vendor/javascripts
       ├── backbone
       │   ├── backbone-1.1.0.js
       │   ├── backbone-bind-to-1.1.0.coffee
