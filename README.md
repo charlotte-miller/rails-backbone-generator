@@ -194,7 +194,7 @@ The generator adds ``Factory.model_name({optional:override})`` and ``Factory.col
 * [Sinon-Jasmine](https://github.com/froots/jasmine-sinon#sinonjs-matchers): Test expectations for mocks and stubs
 
 **Best Practices**: [Backbone Patterns](http://ricostacruz.com/backbone-patterns/)  
-**Testing Backbone**: [Part 1: Introduction](http://tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html) | [Part 2: Models & Collections](http://tinnedfruit.com/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) | [Part 3: Routers & Views](http://tinnedfruit.com/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html)
+**Testing Backbone**: [Part 1: Introduction](http://tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html) | [Part 2: Models & Collections](http://tinnedfruit.com/2011/03/25/testing-backbone-apps-with-jasmine-sinon-2.html) | [Part 3: Routers & Views](http://tinnedfruit.com/2011/04/26/testing-backbone-apps-with-jasmine-sinon-3.html)  
 **Hackers Guide to Backbone**: [Part 1: Models & Events](http://dailyjs.com/2012/07/19/mvstar-2/) | [Part 2: Collections](http://dailyjs.com/2012/07/26/mvstar-3/) | [Part 3: Router and History](http://dailyjs.com/2012/08/02/mvstar-4/) | [Part 4: Sync](http://dailyjs.com/2012/08/09/mvstar-5/)
 
 
