@@ -58,9 +58,15 @@ module BackboneGenerator
     end
 
     def namespace(classify=false)
-      style = classify ?  :camelize : :underscore
-      _collection_name, _namespace = raw_collection_name.split('::').reverse
-      _namespace && _namespace.singularize.send(style)
+      style      = classify ?  :camelize : :underscore
+      join_style = classify ? '.' : '/'
+      
+      _namespaces = raw_collection_name.split('::')
+      _collection_name = _namespaces.pop
+      unless _namespaces.empty?
+        _namespaces = _namespaces.map {|ns| ns.singularize.send(style)}
+      end
+      _namespaces.join(join_style)
     end
 
     def model_name(classify=false)

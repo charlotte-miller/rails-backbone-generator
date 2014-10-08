@@ -38,10 +38,28 @@ module BackboneGenerator
 
     # Helpers
     def namespace(classify=false)
-      @model_name, @namespace = raw_model_name.split('::').reverse
-      style = classify ?  :camelize : :underscore
-      @namespace && @namespace.singularize.send(style)
+      style      = classify ?  :camelize : :underscore
+      join_style = classify ? '.' : '/'
+      
+      _namespaces = raw_model_name.split('::')
+      @model_name = _namespaces.pop
+      unless _namespaces.empty?
+         _namespaces = _namespaces.map {|ns| ns.singularize.send(style)}
+         @namespace = _namespaces.join(join_style)
+      end
     end
+    
+    # def namespace(classify=false)
+    #   style      = classify ?  :camelize : :underscore
+    #   join_style = classify ? '.' : '/'
+    #
+    #   _namespaces = raw_collection_name.split('::')
+    #   _collection_name = _namespaces.pop
+    #   unless _namespaces.empty?
+    #     _namespaces = _namespaces.map {|ns| ns.singularize.send(style)}
+    #   end
+    #   _namespaces.join(join_style)
+    # end
 
     def model_name(classify=false)
       @model_name, @namespace = raw_model_name.split('::').reverse
