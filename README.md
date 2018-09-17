@@ -187,7 +187,7 @@ The generator adds ``Factory.model_name({optional:override})`` and ``Factory.col
 **[Handlebars JS Templates](http://handlebarsjs.com/)**
 * [Handlebars TextMate Bundle](https://github.com/drnic/Handlebars.tmbundle)
 
-**[Jasmine.js](http://pivotal.github.com/jasmine/)** | [Cheat Sheat](https://github.com/mattfysh/cheat-sinon-jasmine)
+**[Jasmine.js](https://jasmine.github.io/)** | [Cheat Sheat](https://github.com/mattfysh/cheat-sinon-jasmine)
 * [Backbone Factory](https://github.com/SupportBee/Backbone-Factory#backbone-factory)
 * [Jasmine Jquery](https://github.com/velesin/jasmine-jquery/)
 * [Sinon](http://sinonjs.org/): Spies, stubs, mock ajax, and time/animation
